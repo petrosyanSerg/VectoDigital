@@ -1,1 +1,21 @@
-
+.nav_link {
+  padding: 16px 24px;
+  @include flex(row,flex-start);
+  gap: 50px;
+  cursor: pointer;
+  img {
+    width: 24px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  p {
+    min-height: 78px;
+    @include flex();
+    visibility: visible;
+    transition: all 0.3s;
+    opacity: 1;
+    font-weight: 400;
+    font-size: 36px;
+    color: #fff;
+  }
+}

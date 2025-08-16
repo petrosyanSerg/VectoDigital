@@ -7,7 +7,7 @@ import "src/components/LazyImage/index.scss";
 
 const imageCache = new Map();
 
-const LazyImage = ({src, alt, className, needCache = false}) => {
+export const LazyImage = ({src, alt, className, needCache = false}) => {
   const [isCached, setIsCached] = useState(imageCache.has(src));
   const {isInView, imgRef, isLoaded, handleImageLoad} = useLazyImage({threshold: 0.1});
   
@@ -40,6 +40,4 @@ const LazyImage = ({src, alt, className, needCache = false}) => {
       })}
     />
   );
-};
-
-export default LazyImage;
+};;
