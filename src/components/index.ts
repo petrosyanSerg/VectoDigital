@@ -1,1 +1,7 @@
 export * from 'src/components/Loading'
+export * from 'src/components/NavLink'
+export * from 'src/components/LazyImage'
+export * from 'src/components/LazyVideo'
+export * from 'src/components/PosterCard'
+export * from 'src/components/FeaturedMovie'
+export * from 'src/components/TrendingNowMovies'
