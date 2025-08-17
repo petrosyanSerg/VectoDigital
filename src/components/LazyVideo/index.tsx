@@ -1,7 +1,5 @@
 import {useIntersectionObserver} from "src/hooks/useIntersectionObserver.ts";
 
-import "src/components/LazyVideo/index.scss"
-
 export const LazyVideo = ({className, src, poster}) => {
   const {ref, isVisible} = useIntersectionObserver({
     threshold: 0.25,
