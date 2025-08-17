@@ -1,9 +1,12 @@
+import {FeaturedMovie, TrendingNowMovies} from "src/components";
+
 import "src/pages/HomePage/index.scss"
-import {FeaturedMovie} from "src/components";
+
 const HomePage = () => {
   return (
     <div className="homepage">
       <FeaturedMovie/>
+      <TrendingNowMovies/>
     </div>
   )
 }

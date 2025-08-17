@@ -1,5 +1,5 @@
 .navigation_menu {
-  @include flex(column, center, normal);
+  @include flex(column, flex-start, normal);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -8,8 +8,19 @@
   padding-left: 38px;
   z-index: 10;
   transition: 0.3s all;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &.navigation_menu_close {
+    overflow-y: hidden;
+    background-color: rgba(0, 0, 0, 0);
+
     .navigation_menu_user {
       opacity: 0;
     }
@@ -107,4 +118,5 @@
   position: absolute;
   user-select: none;
   overflow: hidden;
+  filter: blur(4px)
 }

@@ -1,0 +1,27 @@
+.trending_now {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 146px;
+  padding-right: 16px;
+
+  &_title {
+    color: #ffffff;
+    font-size: 32px;
+  }
+
+  &_list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: scroll;
+    max-width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
