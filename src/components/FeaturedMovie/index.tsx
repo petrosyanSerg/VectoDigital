@@ -1,4 +1,4 @@
-import {LazyImage} from "src/components";
+import {LazyImage, LazyVideo} from "src/components";
 import {formatSecondsToTime, importAllImage} from "src/helpers";
 import homepageImage from "src/assets/images/FeaturedCoverImage.png";
 
@@ -40,7 +40,14 @@ export const FeaturedMovie = ({selectedMovie}) => {
         <div className="featured_movie_buttons_button">Play</div>
         <div className="featured_movie_buttons_button">More Info</div>
       </div>
-      <LazyImage src={homepageImage} className="featured_movie_image" needCache alt="img"/>
+      {videoUrl
+        ? <LazyVideo
+          src={videoUrl}
+          poster={homepageImage}
+          className="featured_movie_image"
+        />
+        : <LazyImage src={homepageImage} className="featured_movie_image" needCache alt="img"/>
+      }
     </div>
   )
 }
