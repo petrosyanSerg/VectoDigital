@@ -20,6 +20,11 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   background-color: rgba(0, 0, 0);
+  @include hideScroll()
+}
+
+html {
+  @include hideScroll()
 }
 
 img, picture, video, canvas, svg {

@@ -4,3 +4,12 @@
   justify-content: $justifyContent;
   align-items: $alignItems;
 }
+@mixin hideScroll(){
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

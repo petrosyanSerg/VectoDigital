@@ -1,28 +1,34 @@
 import {LazyImage} from "src/components";
-import {formatSecondsToTime} from "src/helpers";
+import {formatSecondsToTime, importAllImage} from "src/helpers";
 import homepageImage from "src/assets/images/FeaturedCoverImage.png";
-import homepageTitleImage from "src/assets/images/FeaturedTitleImage.png";
-import Data from 'src/assets/data/data.json';
 
 import "src/components/FeaturedMovie/index.scss"
 
-const {Featured} = Data
+const images = importAllImage()
 
-export const FeaturedMovie = () => {
+export const FeaturedMovie = ({selectedMovie}) => {
   const {
-    Title: title,
-    ReleaseYear: releaseYear,
-    MpaRating: mpaRating,
-    Category: category,
-    Duration: duration,
-    Description: description,
-  } = Featured || {}
+    title,
+    category,
+    duration,
+    videoUrl,
+    mpaRating,
+    titleImage,
+    releaseYear,
+    description,
+  } = selectedMovie || {}
+  
+  const imgSrc = images[`/src/assets/images/${titleImage}`];
+  
+  if (!imgSrc) {
+    console.warn(`Image not found: ${titleImage}`);
+  }
   
   return (
     <div className="featured_movie">
       <div className="featured_movie_category_image">
         <p className="featured_movie_category">{category}</p>
-        <LazyImage needCache src={homepageTitleImage} alt={title}/>
+        <LazyImage needCache src={imgSrc} alt={title}/>
       </div>
       <div className="featured_movie_info">
         <p className="featured_movie_info_item">{releaseYear}</p>

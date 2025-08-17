@@ -1,9 +1,11 @@
 import {LazyImage} from "src/components";
+import {importAllImage} from "src/helpers";
 
 import "src/components/PosterCard/index.scss"
 
-const images = import.meta.glob("/src/assets/images/*", {eager: true, import: "default"});
-export const PosterCard = ({fileName, alt}) => {
+const images = importAllImage()
+
+export const PosterCard = ({id, fileName, alt, onClick}) => {
   const imgSrc = images[`/src/assets/images/${fileName}`] as string;
   
   if (!imgSrc) {
@@ -12,7 +14,7 @@ export const PosterCard = ({fileName, alt}) => {
   }
   
   return (
-    <div className="poster_card">
+    <div className="poster_card" onClick={() => onClick(id)}>
       <LazyImage src={imgSrc} alt={alt || fileName}/>
     </div>
   )
